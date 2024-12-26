@@ -22,3 +22,8 @@ schema = StructType([
 # COMMAND ----------
 
 df.schema
+
+# COMMAND ----------
+
+from pyspark.sql.functions import year
+df.withColumn("Year", year(df["Date"])).show()
