@@ -25,5 +25,8 @@ df.schema
 
 # COMMAND ----------
 
-from pyspark.sql.functions import year
-df.withColumn("Year", year(df["Date"])).show()
+from pyspark.sql.functions import year, month
+df = df.withColumn("Year", year(df["Date"])).withColumn("Month", month(df["Date"]))
+display(df)
+
+display(df)
